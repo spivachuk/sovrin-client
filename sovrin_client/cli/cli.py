@@ -16,7 +16,7 @@ from libnacl import randombytes
 from plenum.cli.cli import Cli as PlenumCli
 from plenum.cli.constants import PROMPT_ENV_SEPARATOR, NO_ENV
 from plenum.cli.helper import getClientGrams
-from plenum.cli.ordered_word_completer import OrderedWordCompleter
+from plenum.cli.phrase_word_completer import PhraseWordCompleter
 from plenum.common.port_dispenser import genHa
 from plenum.common.signer import Signer
 from plenum.common.signer_did import DidSigner
@@ -142,34 +142,31 @@ class SovrinCli(PlenumCli):
         completers = {}
         completers["nym"] = WordCompleter([])
         completers["role"] = WordCompleter(["SPONSOR", "STEWARD"])
-        completers["send_nym"] = OrderedWordCompleter(["send", "NYM"])
-        completers["send_get_nym"] = OrderedWordCompleter(["send", "GET_NYM"])
-        completers["send_attrib"] = OrderedWordCompleter(["send", "ATTRIB"])
-        completers["send_schema"] = OrderedWordCompleter(["send", "SCHEMA"])
-        completers["send_isr_key"] = OrderedWordCompleter(
-            ["send", "ISSUER_KEY"])
-        completers["send_node"] = OrderedWordCompleter(["send", "NODE"])
-        completers["send_pool_upg"] = OrderedWordCompleter(
-            ["send", "POOL_UPGRADE"])
-        completers["add_genesis"] = OrderedWordCompleter(
-            ["add", "genesis", "transaction"])
+        completers["send_nym"] = PhraseWordCompleter("send NYM")
+        completers["send_get_nym"] = PhraseWordCompleter("send GET_NYM")
+        completers["send_attrib"] = PhraseWordCompleter("send ATTRIB")
+        completers["send_schema"] = PhraseWordCompleter("send SCHEMA")
+        completers["send_isr_key"] = PhraseWordCompleter("send ISSUER_KEY")
+        completers["send_node"] = PhraseWordCompleter("send NODE")
+        completers["send_pool_upg"] = PhraseWordCompleter("send POOL_UPGRADE")
+        completers["add_genesis"] = PhraseWordCompleter(
+            "add genesis transaction")
         completers["show_file"] = WordCompleter(["show"])
         completers["load_file"] = WordCompleter(["load"])
-        completers["show_link"] = OrderedWordCompleter(["show", "link"])
+        completers["show_link"] = PhraseWordCompleter("show link")
         completers["conn"] = WordCompleter(["connect"])
         completers["disconn"] = WordCompleter(["disconnect"])
         completers["env_name"] = WordCompleter(list(self.config.ENVS.keys()))
         completers["sync_link"] = WordCompleter(["sync"])
         completers["ping_target"] = WordCompleter(["ping"])
-        completers["show_claim"] = OrderedWordCompleter(["show", "claim"])
-        completers["show_claim_req"] = OrderedWordCompleter(
-            ["show", "claim", "request"])
-        completers["req_claim"] = OrderedWordCompleter(["request", "claim"])
-        completers["accept_link_invite"] = OrderedWordCompleter(
-            ["accept", "invitation", "from"])
+        completers["show_claim"] = PhraseWordCompleter("show claim")
+        completers["show_claim_req"] = PhraseWordCompleter("show claim request")
+        completers["req_claim"] = PhraseWordCompleter("request claim")
+        completers["accept_link_invite"] = PhraseWordCompleter(
+            "accept invitation from")
         completers["set_attr"] = WordCompleter(["set"])
-        completers["send_claim"] = OrderedWordCompleter(["send", "claim"])
-        completers["new_id"] = OrderedWordCompleter(["new", "identifier"])
+        completers["send_claim"] = PhraseWordCompleter("send claim")
+        completers["new_id"] = PhraseWordCompleter("new identifier")
 
         return {**super().completers, **completers}
 
