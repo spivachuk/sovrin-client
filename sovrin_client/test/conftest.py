@@ -50,7 +50,7 @@ from plenum.test.conftest import tdir, nodeReg, up, ready, \
 def warnfilters(plenum_warnfilters):
     def _():
         plenum_warnfilters()
-        warnings.filterwarnings('ignore', category=ResourceWarning, module='sovrin_client\.cli\.cli', message='unclosed file')
+        warnings.filterwarnings('ignore', category=DeprecationWarning, module='plenum\.common\.looper', lineno=179)
     return _
 
 
