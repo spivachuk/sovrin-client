@@ -148,7 +148,7 @@ def updatedDomainTxnFile(tdir, tdirWithDomainTxnsUpdated, genesisTxns,
 
 
 @pytest.fixture(scope="module")
-def nodeSet(tconf, updatedDomainTxnFile, txnPoolNodeSet):
+def nodeSet(tconf, updatedPoolTxnData, updatedDomainTxnFile, txnPoolNodeSet):
     return txnPoolNodeSet
 
 
