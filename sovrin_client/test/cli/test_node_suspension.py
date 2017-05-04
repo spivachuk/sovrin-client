@@ -1,7 +1,6 @@
 from plenum.common.constants import SERVICES, VALIDATOR, TARGET_NYM, DATA
 from plenum.common.signer_simple import SimpleSigner
-from sovrin_client.test.cli.test_node import newStewardCli, newStewardCLI, \
-    newNodeAdded, doNodeCmd, getNewNodeData
+from sovrin_client.test.cli.test_node import newNodeAdded, doNodeCmd
 from sovrin_common.roles import Roles
 from stp_core.network.port_dispenser import genHa
 
