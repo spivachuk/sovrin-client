@@ -408,6 +408,12 @@ def getNewNodeVals():
     }
 
 
+def doSendNodeCmd(do, nodeVals, expMsgs=None):
+    expect = expMsgs or ['Node request completed']
+    do('send NODE dest={newNodeIdr} data={newNodeData}',
+       within=8, expect=expect, mapper=nodeVals)
+
+
 def compareAgentIssuerWallet(unpersistedWallet, restoredWallet):
     def compare(old, new):
         if isinstance(old, Dict):
