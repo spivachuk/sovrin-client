@@ -2,6 +2,7 @@ import json
 import os
 import re
 import tempfile
+from copy import copy
 from typing import List
 
 import pytest
@@ -27,7 +28,8 @@ from plenum.test.cli.helper import newKeyPair, waitAllNodesStarted, \
 
 from sovrin_common.config_util import getConfig
 from sovrin_client.test.cli.helper import ensureNodesCreated, getLinkInvitation, \
-    getPoolTxnData, newCLI, getCliBuilder, P, prompt_is, addAgent
+    getPoolTxnData, newCLI, getCliBuilder, P, prompt_is, addAgent, \
+    getNewNodeVals
 from sovrin_client.test.agent.conftest import faberIsRunning as runningFaber, \
     acmeIsRunning as runningAcme, thriftIsRunning as runningThrift, emptyLooper,\
     faberWallet, acmeWallet, thriftWallet, agentIpAddress, \
@@ -1309,3 +1311,45 @@ def acmeAddedByPhil(be, do, poolNodesStarted, philCli, connectedToTest,
 def thriftAddedByPhil(be, do, poolNodesStarted, philCli, connectedToTest,
                       nymAddedOut, thriftMap):
     return addAgent(be, do, philCli, thriftMap, connectedToTest, nymAddedOut)
+
+
+@pytest.fixture(scope='module')
+def newNodeVals():
+    return getNewNodeVals()
+
+
+@pytest.yield_fixture(scope="module")
+def cliWithNewStewardName(CliBuilder):
+    yield from CliBuilder("newSteward")
+
+
+@pytest.fixture(scope='module')
+def newStewardCli(be, do, poolNodesStarted, trusteeCli,
+                  connectedToTest, nymAddedOut, cliWithNewStewardName,
+                  newNodeVals):
+    be(trusteeCli)
+    if not trusteeCli._isConnectedToAnyEnv():
+        do('connect test', within=3,
+           expect=connectedToTest)
+
+    v = copy(newNodeVals)
+    v['remote'] = v['newStewardIdr']
+    v['newStewardSeed'] = v['newStewardSeed'].decode()
+
+    do('send NYM dest={{newStewardIdr}} role={role}'
+       .format(role=Roles.STEWARD.name),
+       within=3,
+       expect=nymAddedOut, mapper=v)
+
+    be(cliWithNewStewardName)
+
+    do('new key with seed {newStewardSeed}', expect=[
+        'Identifier for key is {newStewardIdr}',
+        'Current identifier set to {newStewardIdr}'],
+       mapper=v)
+
+    if not cliWithNewStewardName._isConnectedToAnyEnv():
+        do('connect test', within=3,
+           expect=connectedToTest)
+
+    return cliWithNewStewardName
