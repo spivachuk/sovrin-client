@@ -1384,19 +1384,15 @@ def newNodeAdded(be, do, poolNodesStarted, philCli, newStewardCli,
     timeout = waits.expectedClientToPoolConnectionTimeout(
         util.getMaxFailures(len(philCli.nodeReg))
     )
+
     newStewardCli.looper.run(eventually(checkClientConnected,
                                         newStewardCli.activeClient,
                                         timeout=timeout))
-    timeout = waits.expectedClientToPoolConnectionTimeout(
-        util.getMaxFailures(len(philCli.nodeReg))
-    )
+
     philCli.looper.run(eventually(checkClientConnected,
                                   philCli.activeClient,
                                   timeout=timeout))
 
-    timeout = waits.expectedClientToPoolConnectionTimeout(
-        util.getMaxFailures(len(philCli.nodeReg))
-    )
     poolNodesStarted.looper.run(eventually(checkNodeConnected,
                                            list(
                                                poolNodesStarted.nodes.values()),
