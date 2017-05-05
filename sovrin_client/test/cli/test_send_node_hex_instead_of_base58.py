@@ -5,18 +5,6 @@ from sovrin_client.test.cli.helper import getNewNodeVals
 from sovrin_common.roles import Roles
 
 
-@pytest.fixture(scope='module')
-def tconf(tconf, request):
-    oldVal = tconf.UpdateGenesisPoolTxnFile
-    tconf.UpdateGenesisPoolTxnFile = True
-
-    def reset():
-        tconf.UpdateGenesisPoolTxnFile = oldVal
-
-    request.addfinalizer(reset)
-    return tconf
-
-
 @pytest.mark.skip('SOV-988')
 def testNewNodeNotAddedIfHexKeyUsedInsteadOfBase58Key(
         be, do, poolNodesStarted, trusteeCli, newStewardCli, nymAddedOut,

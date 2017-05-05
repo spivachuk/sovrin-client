@@ -1,4 +1,3 @@
-import pytest
 from plenum.common.constants import NODE_IP, CLIENT_IP, CLIENT_PORT, NODE_PORT, \
     ALIAS
 from plenum.common.util import randomString
@@ -6,18 +5,6 @@ from plenum.test.cli.helper import exitFromCli
 from stp_core.network.port_dispenser import genHa
 
 from sovrin_client.test.cli.helper import doSendNodeCmd
-
-
-@pytest.fixture(scope="module")
-def tconf(tconf, request):
-    oldVal = tconf.UpdateGenesisPoolTxnFile
-    tconf.UpdateGenesisPoolTxnFile = True
-
-    def reset():
-        tconf.UpdateGenesisPoolTxnFile = oldVal
-
-    request.addfinalizer(reset)
-    return tconf
 
 
 def testAddNewNode(newNodeAdded):
