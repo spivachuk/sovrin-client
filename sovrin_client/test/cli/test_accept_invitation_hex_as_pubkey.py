@@ -22,13 +22,13 @@ from sovrin_common.constants import ENDPOINT
 
 @pytest.fixture(scope="module")
 def faberMap(faberMapWithoutEndpointPubkey):
-    map = faberMapWithoutEndpointPubkey
-    endpointAttr = json.loads(map["endpointAttr"])
+    fbrMap = faberMapWithoutEndpointPubkey
+    endpointAttr = json.loads(fbrMap["endpointAttr"])
     base58Key = '5hmMA64DDQz5NzGJNVtRzNwpkZxktNQds21q3Wxxa62z'
     hexKey = cryptonymToHex(base58Key).decode()
     endpointAttr[ENDPOINT][PUBKEY] = hexKey
-    map["endpointAttr"] = json.dumps(endpointAttr)
-    return map
+    fbrMap["endpointAttr"] = json.dumps(endpointAttr)
+    return fbrMap
 
 
 def testInvitationNotAcceptedIfAgentWasAddedUsingHexAsPubkey(
