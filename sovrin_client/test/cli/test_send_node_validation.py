@@ -58,7 +58,6 @@ def testSendNodeSucceedsIfServicesIsArrayWithValidatorValueOnly(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
 def testSendNodeSucceedsIfServicesIsEmptyArray(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -71,7 +70,7 @@ def testSendNodeSucceedsIfServicesIsEmptyArray(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1091')
 def testSendNodeSucceedsIfServicesIsMissed(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -84,7 +83,7 @@ def testSendNodeSucceedsIfServicesIsMissed(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1092')
 def testSendNodeFailsIfDestIsSmallDecimalNumber(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -97,7 +96,7 @@ def testSendNodeFailsIfDestIsSmallDecimalNumber(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1092')
 def testSendNodeFailsIfDestIsShortReadableName(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -123,7 +122,7 @@ def testSendNodeFailsIfDestIsHexKey(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1096')
 def testSendNodeHasInvalidSyntaxIfDestIsEmpty(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -136,7 +135,7 @@ def testSendNodeHasInvalidSyntaxIfDestIsEmpty(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1096')
 def testSendNodeHasInvalidSyntaxIfDestIsMissed(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -483,7 +482,7 @@ def testSendNodeFailsIfClientPortIsMissed(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1093')
 def testSendNodeFailsIfAliasIsEmpty(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -508,8 +507,8 @@ def testSendNodeFailsIfAliasIsMissed(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
-def testSendNodeFailsIfServicesContainUnknownValue(
+@pytest.mark.skip(reason='SOV-1094')
+def testSendNodeFailsIfServicesContainsUnknownValue(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
     newNodeVals['newNodeData'][SERVICES] = [VALIDATOR, 'DECIDER']
@@ -521,7 +520,7 @@ def testSendNodeFailsIfServicesContainUnknownValue(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1094')
 def testSendNodeFailsIfServicesIsValidatorValue(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -534,7 +533,7 @@ def testSendNodeFailsIfServicesIsValidatorValue(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1094')
 def testSendNodeFailsIfServicesIsEmptyString(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -547,8 +546,8 @@ def testSendNodeFailsIfServicesIsEmptyString(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
-def testSendNodeFailsIfDataContainsExtraField(
+@pytest.mark.skip(reason='SOV-1095')
+def testSendNodeFailsIfDataContainsUnknownField(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
     newNodeVals['newNodeData']['extra'] = 42
@@ -572,7 +571,7 @@ def testSendNodeFailsIfDataIsEmptyJson(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1096')
 def testSendNodeHasInvalidSyntaxIfDataIsBrokenJson(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -585,7 +584,7 @@ def testSendNodeHasInvalidSyntaxIfDataIsBrokenJson(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1096')
 def testSendNodeHasInvalidSyntaxIfDataIsNotJson(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -598,7 +597,7 @@ def testSendNodeHasInvalidSyntaxIfDataIsNotJson(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1096')
 def testSendNodeHasInvalidSyntaxIfDataIsEmptyString(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -611,7 +610,7 @@ def testSendNodeHasInvalidSyntaxIfDataIsEmptyString(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1096')
 def testSendNodeHasInvalidSyntaxIfDataIsMissed(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
@@ -622,8 +621,8 @@ def testSendNodeHasInvalidSyntaxIfDataIsMissed(
     ensurePoolIsOperable(be, do, newStewardCli)
 
 
-@pytest.mark.skip
-def testSendNodeHasInvalidSyntaxIfExtraParameterIsPassed(
+@pytest.mark.skip(reason='SOV-1096')
+def testSendNodeHasInvalidSyntaxIfUnknownParameterIsPassed(
         be, do, poolNodesStarted, newStewardCli, newNodeVals):
 
     be(newStewardCli)
