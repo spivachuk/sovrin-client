@@ -166,7 +166,7 @@ def testSendNymSucceedsWhenRoleIsMissed(
        mapper=parameters, expect=NYM_ADDED_OUT, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfIdentifierSizeIs15Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -180,7 +180,7 @@ def testSendNymFailsIfIdentifierSizeIs15Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfIdentifierSizeIs17Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -194,7 +194,7 @@ def testSendNymFailsIfIdentifierSizeIs17Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfFullVerkeySizeIs31Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -209,7 +209,7 @@ def testSendNymFailsIfFullVerkeySizeIs31Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfFullVerkeySizeIs33Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -224,7 +224,7 @@ def testSendNymFailsIfFullVerkeySizeIs33Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfAbbrevVerkeySizeIs15Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -239,7 +239,7 @@ def testSendNymFailsIfAbbrevVerkeySizeIs15Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfAbbrevVerkeySizeIs17Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -254,7 +254,7 @@ def testSendNymFailsIfAbbrevVerkeySizeIs17Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfCryptonymSizeIs31Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -268,7 +268,7 @@ def testSendNymFailsIfCryptonymSizeIs31Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1108')
 def testSendNymFailsIfCryptonymSizeIs33Bytes(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -282,7 +282,7 @@ def testSendNymFailsIfCryptonymSizeIs33Bytes(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfUuidIdentifierIsHexEncoded(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -296,7 +296,7 @@ def testSendNymFailsIfUuidIdentifierIsHexEncoded(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfFullVerkeyIsHexEncoded(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -313,7 +313,7 @@ def testSendNymFailsIfFullVerkeyIsHexEncoded(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfAbbrevVerkeyIsHexEncoded(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -330,7 +330,7 @@ def testSendNymFailsIfAbbrevVerkeyIsHexEncoded(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfCryptonymIsHexEncoded(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -344,7 +344,7 @@ def testSendNymFailsIfCryptonymIsHexEncoded(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfIdentifierContainsNonBase58Characters(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -360,7 +360,7 @@ def testSendNymFailsIfIdentifierContainsNonBase58Characters(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfFullVerkeyContainsNonBase58Characters(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -377,7 +377,7 @@ def testSendNymFailsIfFullVerkeyContainsNonBase58Characters(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfAbbrevVerkeyContainsNonBase58Characters(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -394,7 +394,7 @@ def testSendNymFailsIfAbbrevVerkeyContainsNonBase58Characters(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfCryptonymContainsNonBase58Characters(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -410,7 +410,7 @@ def testSendNymFailsIfCryptonymContainsNonBase58Characters(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfFullVerkeyContainsTilde(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -427,7 +427,7 @@ def testSendNymFailsIfFullVerkeyContainsTilde(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1109')
 def testSendNymFailsIfAbbrevVerkeyDoesNotContainTilde(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -444,7 +444,7 @@ def testSendNymFailsIfAbbrevVerkeyDoesNotContainTilde(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1110')
 def testSendNymFailsIfRoleIsUnknown(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -461,7 +461,7 @@ def testSendNymFailsIfRoleIsUnknown(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1110')
 def testSendNymFailsIfRoleIsSpecifiedUsingNumericCode(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -470,7 +470,7 @@ def testSendNymFailsIfRoleIsSpecifiedUsingNumericCode(
     parameters = {
         'dest': halfKeyIdentifier,
         'verkey': abbrevVerkey,
-        'role': Roles.TRUST_ANCHOR
+        'role': Roles.TRUST_ANCHOR.value
     }
 
     be(trusteeCli)
@@ -478,7 +478,7 @@ def testSendNymFailsIfRoleIsSpecifiedUsingNumericCode(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1111')
 def testSendNymHasInvalidSyntaxIfIdentifierIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -495,7 +495,7 @@ def testSendNymHasInvalidSyntaxIfIdentifierIsEmpty(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1111')
 def testSendNymHasInvalidSyntaxIfIdentifierIsMissed(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -511,7 +511,7 @@ def testSendNymHasInvalidSyntaxIfIdentifierIsMissed(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1112')
 def testSendNymHasInvalidSyntaxIfVerkeyIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -528,7 +528,7 @@ def testSendNymHasInvalidSyntaxIfVerkeyIsEmpty(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1111')
 def testSendNymHasInvalidSyntaxIfIdentifierAndVerkeyAreMissed(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -541,7 +541,7 @@ def testSendNymHasInvalidSyntaxIfIdentifierAndVerkeyAreMissed(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1112')
 def testSendNymHasInvalidSyntaxIfRoleIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -558,7 +558,7 @@ def testSendNymHasInvalidSyntaxIfRoleIsEmpty(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='SOV-1111')
 def testSendNymHasInvalidSyntaxIfUnknownParameterIsPassed(
         be, do, poolNodesStarted, trusteeCli):
 
