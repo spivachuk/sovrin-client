@@ -102,6 +102,53 @@ def testSendNymSucceedsForCryptonymIdentifierAndOmittedVerkey(
        mapper=parameters, expect=NYM_ADDED_OUT, within=2)
 
 
+def testSendNymSucceedsForCryptonymIdentifierAndEmptyVerkey(
+        be, do, poolNodesStarted, trusteeCli):
+
+    parameters = {
+        'dest': createCryptonym(),
+        'verkey': '',
+        'role': Roles.TRUST_ANCHOR.name
+    }
+
+    be(trusteeCli)
+    do('send NYM dest={dest} role={role} verkey={verkey}',
+       mapper=parameters, expect=NYM_ADDED_OUT, within=2)
+
+
+def testSendNymSucceedsForCryptonymIdentifierAndSameFullVerkey(
+        be, do, poolNodesStarted, trusteeCli):
+
+    cryptonym = createCryptonym()
+
+    parameters = {
+        'dest': cryptonym,
+        'verkey': cryptonym,
+        'role': Roles.TRUST_ANCHOR.name
+    }
+
+    be(trusteeCli)
+    do('send NYM dest={dest} role={role} verkey={verkey}',
+       mapper=parameters, expect=NYM_ADDED_OUT, within=2)
+
+
+def testSendNymSucceedsForCryptonymIdentifierAndDifferentFullVerkey(
+        be, do, poolNodesStarted, trusteeCli):
+
+    cryptonym = createCryptonym()
+    _, fullVerkey = createUuidIdentifierAndFullVerkey()
+
+    parameters = {
+        'dest': cryptonym,
+        'verkey': fullVerkey,
+        'role': Roles.TRUST_ANCHOR.name
+    }
+
+    be(trusteeCli)
+    do('send NYM dest={dest} role={role} verkey={verkey}',
+       mapper=parameters, expect=NYM_ADDED_OUT, within=2)
+
+
 def testSendNymSucceedsForTrusteeRole(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -195,56 +242,6 @@ def testSendNymSucceedsForEmptyRole(
     be(trusteeCli)
     do('send NYM dest={dest} role={role} verkey={verkey}',
        mapper=parameters, expect=NYM_ADDED_OUT, within=2)
-
-
-@pytest.mark.skip(reason='SOV-1117')
-def testSendNymFailsForCryptonymIdentifierAndEmptyVerkey(
-        be, do, poolNodesStarted, trusteeCli):
-
-    parameters = {
-        'dest': createCryptonym(),
-        'verkey': '',
-        'role': Roles.TRUST_ANCHOR.name
-    }
-
-    be(trusteeCli)
-    do('send NYM dest={dest} role={role} verkey={verkey}',
-       mapper=parameters, expect=ERROR, within=2)
-
-
-@pytest.mark.skip(reason='SOV-1117')
-def testSendNymFailsForCryptonymIdentifierAndSameFullVerkey(
-        be, do, poolNodesStarted, trusteeCli):
-
-    cryptonym = createCryptonym()
-
-    parameters = {
-        'dest': cryptonym,
-        'verkey': cryptonym,
-        'role': Roles.TRUST_ANCHOR.name
-    }
-
-    be(trusteeCli)
-    do('send NYM dest={dest} role={role} verkey={verkey}',
-       mapper=parameters, expect=ERROR, within=2)
-
-
-@pytest.mark.skip(reason='SOV-1117')
-def testSendNymFailsForCryptonymIdentifierAndDifferentFullVerkey(
-        be, do, poolNodesStarted, trusteeCli):
-
-    cryptonym = createCryptonym()
-    _, fullVerkey = createUuidIdentifierAndFullVerkey()
-
-    parameters = {
-        'dest': cryptonym,
-        'verkey': fullVerkey,
-        'role': Roles.TRUST_ANCHOR.name
-    }
-
-    be(trusteeCli)
-    do('send NYM dest={dest} role={role} verkey={verkey}',
-       mapper=parameters, expect=ERROR, within=2)
 
 
 @pytest.mark.skip(reason='SOV-1117')
