@@ -132,7 +132,7 @@ def testSendAttribFailsIfDestIsPassedInInvalidFormat(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfDestIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -148,7 +148,7 @@ def testSendAttribHasInvalidSyntaxIfDestIsEmpty(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfDestIsOmitted(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -322,7 +322,7 @@ def testSendAttribSucceedsForRawWithEndpointWithoutProperties(
        mapper=parameters, expect=ATTRIBUTE_ADDED, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribSucceedsForRawWithEndpointBeingNull(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -641,7 +641,7 @@ def testSendAttribFailsForRawWithEndpointWithHaBeingDecimalNumber(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsForRawWithEndpointWithEmptyHa(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -680,7 +680,7 @@ def testSendAttribFailsForRawWithEndpointBeingEmptyString(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsIfRawContainsMulipleAttrs(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -700,7 +700,7 @@ def testSendAttribFailsIfRawContainsMulipleAttrs(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsIfRawContainsNoAttrs(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -717,7 +717,7 @@ def testSendAttribFailsIfRawContainsNoAttrs(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsIfRawIsBrokenJson(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -740,7 +740,7 @@ def testSendAttribFailsIfRawIsBrokenJson(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsIfRawIsHex(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -757,7 +757,7 @@ def testSendAttribFailsIfRawIsHex(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsIfRawIsHumanReadableText(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -774,7 +774,7 @@ def testSendAttribFailsIfRawIsHumanReadableText(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsIfRawIsDecimalNumber(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -791,7 +791,7 @@ def testSendAttribFailsIfRawIsDecimalNumber(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfRawIsEmptyString(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -808,7 +808,7 @@ def testSendAttribHasInvalidSyntaxIfRawIsEmptyString(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribSucceedsForHexHash(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -829,7 +829,7 @@ def testSendAttribSucceedsForHexHash(
        mapper=parameters, expect=ATTRIBUTE_ADDED, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsForBase58Hash(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -852,7 +852,7 @@ def testSendAttribFailsForBase58Hash(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsForBase64Hash(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -875,7 +875,7 @@ def testSendAttribFailsForBase64Hash(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfHashIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -892,7 +892,7 @@ def testSendAttribHasInvalidSyntaxIfHashIsEmpty(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribSucceedsForHexEnc(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -915,7 +915,7 @@ def testSendAttribSucceedsForHexEnc(
        mapper=parameters, expect=ATTRIBUTE_ADDED, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsForBase58Enc(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -939,7 +939,7 @@ def testSendAttribFailsForBase58Enc(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribFailsForBase64Enc(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -963,7 +963,7 @@ def testSendAttribFailsForBase64Enc(
        mapper=parameters, expect=ERROR, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfEncIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -980,7 +980,7 @@ def testSendAttribHasInvalidSyntaxIfEncIsEmpty(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfRawAndHashPassedAtSameTime(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -1002,7 +1002,7 @@ def testSendAttribHasInvalidSyntaxIfRawAndHashPassedAtSameTime(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfRawAndEncPassedAtSameTime(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -1026,7 +1026,7 @@ def testSendAttribHasInvalidSyntaxIfRawAndEncPassedAtSameTime(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfHashAndEncPassedAtSameTime(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -1051,7 +1051,7 @@ def testSendAttribHasInvalidSyntaxIfHashAndEncPassedAtSameTime(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfRawHashAndEncPassedAtSameTime(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -1077,7 +1077,7 @@ def testSendAttribHasInvalidSyntaxIfRawHashAndEncPassedAtSameTime(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfUnknownParameterIsPassed(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -1097,7 +1097,7 @@ def testSendAttribHasInvalidSyntaxIfUnknownParameterIsPassed(
        mapper=parameters, expect=INVALID_SYNTAX, within=2)
 
 
-@pytest.mark.skip
+@pytest.mark.skip(reason='INDY-71')
 def testSendAttribHasInvalidSyntaxIfParametersOrderIsWrong(
         be, do, poolNodesStarted, trusteeCli):
 
