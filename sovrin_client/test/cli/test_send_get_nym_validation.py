@@ -1,5 +1,6 @@
 from binascii import hexlify
 
+import pytest
 from plenum.common.util import friendlyToRaw
 
 from sovrin_client.test.cli.constants import INVALID_SYNTAX
@@ -103,6 +104,7 @@ def testSendGetNymFailsIfDestIsInvalid(
        mapper=parameters, expect=NYM_NOT_FOUND, within=2)
 
 
+@pytest.mark.skip(reason='INDY-139')
 def testSendGetNymHasInvalidSyntaxIfDestIsEmpty(
         be, do, poolNodesStarted, trusteeCli):
 
@@ -122,6 +124,7 @@ def testSendGetNymHasInvalidSyntaxIfDestIsOmitted(
     do('send GET_NYM', expect=INVALID_SYNTAX, within=2)
 
 
+@pytest.mark.skip(reason='INDY-139')
 def testSendGetNymHasInvalidSyntaxIfUnknownParameterIsPassed(
         be, do, poolNodesStarted, trusteeCli):
 
