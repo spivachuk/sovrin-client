@@ -815,7 +815,7 @@ def testSendAttribHasInvalidSyntaxIfRawIsEmptyString(
 
 
 @pytest.mark.skip(reason='INDY-71')
-def testSendAttribSucceedsForHexEncodedSha256Hash(
+def testSendAttribSucceedsForHexSha256Hash(
         be, do, poolNodesStarted, trusteeCli):
 
     uuidIdentifier = createUuidIdentifier()
@@ -836,7 +836,7 @@ def testSendAttribSucceedsForHexEncodedSha256Hash(
 
 
 @pytest.mark.skip(reason='INDY-71')
-def testSendAttribSucceedsForHexEncodedHashWithLettersInBothCases(
+def testSendAttribSucceedsForHexHashWithLettersInBothCases(
         be, do, poolNodesStarted, trusteeCli):
 
     uuidIdentifier = createUuidIdentifier()
@@ -887,7 +887,7 @@ def testSendAttribFailsForHashLongerThanSha256(
 
 
 @pytest.mark.skip(reason='INDY-71')
-def testSendAttribFailsForBase58EncodedHash(
+def testSendAttribFailsForBase58Hash(
         be, do, poolNodesStarted, trusteeCli):
 
     uuidIdentifier = createUuidIdentifier()
@@ -910,7 +910,7 @@ def testSendAttribFailsForBase58EncodedHash(
 
 
 @pytest.mark.skip(reason='INDY-71')
-def testSendAttribFailsForBase64EncodedHash(
+def testSendAttribFailsForBase64Hash(
         be, do, poolNodesStarted, trusteeCli):
 
     uuidIdentifier = createUuidIdentifier()
