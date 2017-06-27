@@ -38,7 +38,7 @@ NEW_ID_REG_EX = "(\s* (?P<new_id>new\s+identifier)" \
                 "\s? (as\s+(?P<alias>[a-zA-Z0-9-]+))?)"
 
 GET_NYM_REG_EX = "(\s* (?P<send_get_nym>send\s+{getNym}) " \
-                 "\s+ (?P<dest>dest=)\s*(?P<dest_id>[A-Za-z0-9+=/]*) \s*) ".format(
+                 "\s+ (?P<dest>dest=)\s*(?P<dest_id>[A-Za-z0-9+=/]+) \s*) ".format(
     getNym=SovrinTransactions.GET_NYM.name)
 
 ADD_ATTRIB_REG_EX = \
@@ -137,7 +137,8 @@ SEND_POOL_UPG_REG_EX = "(\s*(?P<send_pool_upg>send\s+{poolUpgrade})" \
                        "(\s+ (?P<action_key>action=)\s*(?P<action>start|cancel))" \
                        '(\s+ (?P<justification_key>justification=)\s*(?P<justification>\"[a-zA-z0-9-_\s]+\") \s*)? ' \
                        "(\s+ (?P<schedule_key>schedule=)\s*(?P<schedule>\{{\s*.*\}}) \s*)? " \
-                       "(\s+ (?P<timeout_key>timeout=)\s*(?P<timeout>[0-9+]+))?)".format(poolUpgrade=SovrinTransactions.POOL_UPGRADE.name)
+                       "(\s+ (?P<timeout_key>timeout=)\s*(?P<timeout>[0-9+]+))?)" \
+                       "(\s+ (?P<force_key>force=)\s*(?P<force>True|False))?".format(poolUpgrade=SovrinTransactions.POOL_UPGRADE.name)
 
 REQ_AVAIL_CLAIMS_REG_EX = '(\s*(?P<req_avail_claims>request \s+ available \s+ claims \s+ from) ' \
                           '\s+ (?P<link_name>[A-Za-z0-9-." ]+) \s*)'
