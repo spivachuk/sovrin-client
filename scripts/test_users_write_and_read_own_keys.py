@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 """
 Test performing the following scenario on behalf of multiple users in parallel:
@@ -11,9 +11,9 @@ To run the test execute this python script providing the following parameters:
 
 Examples:
 
-python test_users_write_and_read_own_keys.py -u 8 -i 10 -t 60
+test_users_write_and_read_own_keys -u 8 -i 10 -t 60
 
-python test_users_write_and_read_own_keys.py--users 20 --iterations 50
+test_users_write_and_read_own_keys--users 20 --iterations 50
 """
 
 import argparse
