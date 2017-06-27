@@ -13,7 +13,7 @@ Examples:
 
 test_users_write_and_read_own_keys -u 8 -i 10 -t 60
 
-test_users_write_and_read_own_keys--users 20 --iterations 50
+test_users_write_and_read_own_keys --users 20 --iterations 50
 """
 
 import argparse
