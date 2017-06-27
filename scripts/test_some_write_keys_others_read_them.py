@@ -36,25 +36,24 @@ def parseArgs():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-w", "--writers",
-                        action="store",
                         type=int,
+                        required=True,
                         dest="writers",
                         help="number of writers")
 
     parser.add_argument("-r", "--readers",
-                        action="store",
                         type=int,
+                        required=True,
                         dest="readers",
                         help="number of readers")
 
     parser.add_argument("-i", "--iterations",
-                        action="store",
                         type=int,
+                        required=True,
                         dest="iterations",
                         help="number of iterations")
 
     parser.add_argument("-t", "--timeout",
-                        action="store",
                         type=int,
                         dest="timeout",
                         help="timeout in seconds")
