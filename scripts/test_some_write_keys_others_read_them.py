@@ -15,7 +15,7 @@ Examples:
 
 test_some_write_keys_others_read_them -w 2 -r 8 -i 10 -t 30
 
-test_some_write_keys_others_read_them --writers 4 --readers 20 --iteration 50
+test_some_write_keys_others_read_them --writers 4 --readers 20 --iterations 50
 """
 
 import argparse
