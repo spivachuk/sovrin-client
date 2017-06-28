@@ -122,7 +122,7 @@ def main(args):
             ex = future.exception(timeout=0)
             if ex:
                 failed = True
-                logger.exception(ex)
+                logger.exception(ex, exc_info=ex)
 
         if failed:
             logger.error("Scenarios of some writers or readers failed")
