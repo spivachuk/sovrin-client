@@ -85,7 +85,7 @@ def main(args):
                             nymsIdsAndVerkeys=usersIdsAndVerkeys,
                             logFileName = os.path.join(
                                 logDir,
-                                "nyms-creator-{}".format(
+                                "nyms-creator-{}.log".format(
                                     STEWARD1_SEED.decode())))
 
         nymsCreationScenarioFuture.result(timeout=timeout)
@@ -97,7 +97,7 @@ def main(args):
                              iterations=numOfIterations,
                              logFileName=os.path.join(
                                  logDir,
-                                 "writer-{}".format(writer.seed.decode())))
+                                 "writer-{}.log".format(writer.seed.decode())))
              for writer in writers]
 
         writersIds = [writer.identifier for writer in writers]
@@ -109,7 +109,7 @@ def main(args):
                              iterations=numOfIterations,
                              logFileName=os.path.join(
                                  logDir,
-                                 "reader-{}".format(reader.seed.decode())))
+                                 "reader-{}.log".format(reader.seed.decode())))
              for reader in readers]
 
         futures.wait(keyRotationScenariosFutures +
